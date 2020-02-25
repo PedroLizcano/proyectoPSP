@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="helloWorldPSP" targetNamespace="http://www.example.org/helloWorldPSP/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/helloWorldPSP/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="escuela" targetNamespace="http://www.example.org/escuela/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/escuela/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.example.org/helloWorldPSP/">
-			<xsd:element name="hello">
+    <xsd:schema targetNamespace="http://www.example.org/escuela/">
+			<xsd:element name="asignaturaRequest">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="name" type="xsd:string"/>
+						<xsd:element name="nameasignatura" type="xsd:string"/>
+						<xsd:element name="idasignatura" type="xsd:string"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
 
-			<xsd:element name="helloResponse">
+			<xsd:element name="asignaturaResponse">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="greet" type="xsd:string"/>
@@ -19,15 +20,16 @@
 			</xsd:element>
 			
 
-			<xsd:element name="goodbye">
+			<xsd:element name="alumnoRequest">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="name" type="xsd:string"/>
-						<xsd:element name="procedence" type="xsd:string"/>
+						<xsd:element name="namealumno" type="xsd:string"/>
+						<xsd:element name="idalumno" type="xsd:string"/>
+						<xsd:element name="direccionalumno" type="xsd:string"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="goodbyeResponse">
+			<xsd:element name="alumnoResponse">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="greet" type="xsd:string"/>
@@ -37,40 +39,40 @@
 
 		</xsd:schema>
   </wsdl:types>
-  <wsdl:message name="helloRequest">
-    <wsdl:part name="parameters" element="tns:hello">
+  <wsdl:message name="asignaturaResponse">
+    <wsdl:part name="parameters" element="tns:asignaturaResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="helloResponse">
-    <wsdl:part name="parameters" element="tns:helloResponse">
+  <wsdl:message name="alumnoRequest">
+    <wsdl:part name="parameters" element="tns:alumnoRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="goodbyeRequest">
-    <wsdl:part name="parameters" element="tns:goodbye">
+  <wsdl:message name="alumnoResponse">
+    <wsdl:part name="parameters" element="tns:alumnoResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="goodbyeResponse">
-    <wsdl:part name="parameters" element="tns:goodbyeResponse">
+  <wsdl:message name="asignaturaRequest">
+    <wsdl:part name="parameters" element="tns:asignaturaRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="helloWorldPSP">
-    <wsdl:operation name="hello">
-      <wsdl:input message="tns:helloRequest">
+  <wsdl:portType name="escuela">
+    <wsdl:operation name="escuelaasignatura">
+      <wsdl:input message="tns:asignaturaRequest">
     </wsdl:input>
-      <wsdl:output message="tns:helloResponse">
+      <wsdl:output message="tns:asignaturaResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="goodbye">
-      <wsdl:input message="tns:goodbyeRequest">
+    <wsdl:operation name="escuelaalumno">
+      <wsdl:input message="tns:alumnoRequest">
     </wsdl:input>
-      <wsdl:output message="tns:goodbyeResponse">
+      <wsdl:output message="tns:alumnoResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="helloWorldPSPSOAP" type="tns:helloWorldPSP">
+  <wsdl:binding name="escuelaSOAP" type="tns:escuela">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="hello">
-      <soap:operation soapAction="http://www.example.org/helloWorldPSP/hello"/>
+    <wsdl:operation name="escuelaasignatura">
+      <soap:operation soapAction="http://www.example.org/escuela/escuelaasignatura"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -78,8 +80,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="goodbye">
-      <soap:operation soapAction="http://www.example.org/helloWorldPSP/goodbye"/>
+    <wsdl:operation name="escuelaalumno">
+      <soap:operation soapAction="http://www.example.org/esceula/escuelaalumno"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -88,9 +90,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="helloWorldPSP">
-    <wsdl:port name="helloWorldPSPSOAP" binding="tns:helloWorldPSPSOAP">
-      <soap:address location="http://localhost:8081/ProyectoPSP/services/helloWorldPSPSOAP"/>
+  <wsdl:service name="escuela">
+    <wsdl:port name="escuelaSOAP" binding="tns:escuelaSOAP">
+      <soap:address location="http://localhost:8081/ProyectoPSP/services/escuelaSOAP"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

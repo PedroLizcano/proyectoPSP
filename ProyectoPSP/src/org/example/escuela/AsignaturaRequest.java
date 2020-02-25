@@ -1,5 +1,5 @@
 
-package org.example.helloworldpsp;
+package org.example.escuela;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,8 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="procedence" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="nameasignatura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="idasignatura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -30,63 +30,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name",
-    "procedence"
+    "nameasignatura",
+    "idasignatura"
 })
-@XmlRootElement(name = "goodbye")
-public class Goodbye {
+@XmlRootElement(name = "asignaturaRequest")
+public class AsignaturaRequest {
 
     @XmlElement(required = true)
-    protected String name;
+    protected String nameasignatura;
     @XmlElement(required = true)
-    protected String procedence;
+    protected String idasignatura;
 
     /**
-     * Obtiene el valor de la propiedad name.
+     * Obtiene el valor de la propiedad nameasignatura.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getNameasignatura() {
+        return nameasignatura;
     }
 
     /**
-     * Define el valor de la propiedad name.
+     * Define el valor de la propiedad nameasignatura.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setNameasignatura(String value) {
+        this.nameasignatura = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad procedence.
+     * Obtiene el valor de la propiedad idasignatura.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getProcedence() {
-        return procedence;
+    public String getIdasignatura() {
+        return idasignatura;
     }
 
     /**
-     * Define el valor de la propiedad procedence.
+     * Define el valor de la propiedad idasignatura.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setProcedence(String value) {
-        this.procedence = value;
+    public void setIdasignatura(String value) {
+        this.idasignatura = value;
     }
 
 }

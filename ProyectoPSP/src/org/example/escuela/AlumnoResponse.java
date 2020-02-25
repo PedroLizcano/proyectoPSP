@@ -1,5 +1,5 @@
 
-package org.example.helloworldpsp;
+package org.example.escuela;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "greet"
 })
-@XmlRootElement(name = "goodbyeResponse")
-public class GoodbyeResponse {
+@XmlRootElement(name = "alumnoResponse")
+public class AlumnoResponse {
 
     @XmlElement(required = true)
     protected String greet;
