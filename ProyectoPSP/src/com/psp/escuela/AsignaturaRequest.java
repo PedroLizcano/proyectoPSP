@@ -1,5 +1,5 @@
 
-package org.example.escuela;
+package com.psp.escuela;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
